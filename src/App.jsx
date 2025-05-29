@@ -1,55 +1,93 @@
 import pump from "./assets/pump.png";
+import { useState } from "react";
 import sphere from "./assets/sphere.png";
 import tube from "./assets/tube.png";
 import pipe from './assets/pipe.png';
 import handle from './assets/handle.png';
-import manometer from './assets/manometer.png'
-import packed from './assets/packed.png'
-import * as motion from "motion/react-client"
-// const [height, setHeight] = useState(70);
-// const pumpOn = () => {
-//   alert("on");
-//   setHeight((prev) => {
-//     prev + 5;
-//   });
-// };
+import packedpipe from './assets/packedpipe.png';
+import manometer from './assets/manometer.png';
+import packed from './assets/packed.png';
+import extendpipe from './assets/extendpipe.png';
 
-//bg-[url(./assets/image.png)]
-function App() {
+import * as motion from "motion/react-client";
+ function App() {
+  const [heightt, setHeight] = useState(10);
+  const [angle,setAngle] = useState(0);
+  const [ball,setBall] = useState(0);
+  const bypass = () => {
+  
+    if(ball>(-200)) {
+      setBall ((prev=>prev-20));
+        setHeight((prev) => prev + 100);
+       setAngle((prev=>prev+20))
+    } 
+    else{
+      /////window
+    }
+  };
+
   return (
-    <div className=" w-[900px] justify-center pl-34 align-middle flex-col h-[900px]"> 
+    <div className="mx-auto w-[900px] bg-amber-200 justify-center pt-12 align-middle relative flex-col h-[900px]">
+      <img src={packedpipe} className="absolute w-100 h-30 top-4 left-36 z-20" />
+      <img src={packedpipe} className="absolute w-100 h-30 top-4 left-68 z-30" />
+      <img src={extendpipe} className="absolute w-60 h-115 top-14 left-35 z-20" />
       
-      <div className="flex h-3/4 w-full">
-      <motion.div  whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.8 }}  className=" relative w-1/3">
-      <img src={packed} className="h-full w-1/2 mx-auto "/>
-      
-      </motion.div>
-       <div className="relative w-1/3">
-       <img src={manometer} className="top-3 h-3/4 w-full  absolute"/>
-       </div>
- <div className=" w-1/3">
- <div className="h-3/4 flex relative  justify-center ">
- 
-  <img src={tube} alt="pump" className="h-120 w-100 absolute " />
+      <div className="flex h-3/4 absolute w-full">
+        {/* Packed Bed */}
+        <motion.div
+          initial={{ scale: 1.1 }}
+          whileHover={{ scale: 1.11 }}
+          whileTap={{ scale: 1.12 }}
+          className="relative z-50 top-4 w-1/3"
+        >
+          <img src={packed} className="h-3/4 z-50" />
+          <h1 className="top-60 ml-49 z-50 text-red-600 absolute">Packed Bed</h1>
+        </motion.div>
 
-        <img src={sphere} alt="pump"  className={` h-10 w-10 absolute top-4 z-10`}/>
- 
- </div>
- 
- <div className="h-1/4 relative flex justify-center  ">
- <img src={pipe} className="absolute w-full h-full "/>
- <img src={handle }  className="h-1/2  absolute top-10 z-20  "/>
- <h1 className="bottom-0.5 z-50 text-red-600 absolute">by pass value </h1>
- </div>
- </div>
-      </div>
+        {/* Manometer */}
+        <div className="relative w-1/3 pl-10">
+          <div className="bg-[#7fadadff] h-26 w-5 relative top-55 opacity-85 z-50 left-19"></div>
+          <div className="bg-[#7fadadff] h-26 w-5 relative top-30 opacity-85 z-50 left-52"></div>
+          <img src={manometer} className="top-3 h-3/4 w-full absolute" />
+          <h1 className="bottom-40 ml-25 z-50 text-red-600 absolute">Manometer</h1>
+        </div>
 
-      <div className="w-full h-1/4 flex    " >
-        <img src={pump} alt="pump" className="h-80 w-80 " />
+        {/* Rotameter */}
+        <div className="w-1/3">
+          <div className="h-3/4 flex relative justify-center">
+          <div className="absolute flex w-15 z-50 h-65  top-23 overflow-clip  ">
+             <motion.div
+              animate={{ height: heightt }} 
+              transition={{duration:1.5}}
+              className="bg-[#7fadadff] w-full z-20 absolute bottom-0    opacity-80"
+            ></motion.div>
+               <motion.img   animate={{ y:ball }}
+              transition={{duration:1.5}} src={sphere} alt="sphere" className="h-14 w-14 absolute bottom-0   z-10" />
+          </div>
+           
+            <img src={tube} alt="tube" className="h-120 w-100 absolute" />
+            
+            <h1 className="bottom-10 z-50 text-red-600 absolute">Rotameter</h1>
+          </div>
+
+          {/* Bypass Valve */}
+          <div
+           
+            className="h-1/4 relative flex justify-center -mt-19"
+          >
+            <img src={pipe} className="absolute w-full h-full" />
+            <motion.img
+              onClick={bypass}
+              src={handle}
+              className="h-1/2 absolute top-10 z-20 cursor-pointer"
+              animate={{ rotate:angle }}
+              transition={{duration:.3}}
+            />
+            <h1 className="bottom-0.5 z-50 text-red-600 absolute">Bypass Valve</h1>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
-
-export default App;
+ export default  App;
