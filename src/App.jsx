@@ -24,7 +24,7 @@ function App() {
   const [right, setRight] = useState(0);
   const [discard, setDiscard] = useState(0);
   const [packedwater,setPackedwater] =useState(0);
-  const [tankk, setTankk] = useState(200);
+  const [tankk, setTankk] = useState(250);
   const [count, setCount] = useState(0);
   const previous = () => {
     count!=0&& setCount((prev)=>prev-1)
@@ -68,10 +68,14 @@ function App() {
     }
   };
   const bypass = () => {
+    if(tankk> 150){
+  setTankk((prev)=>prev-50);
+    }
     if (ball > -200) {
       setBall((prev) => prev - 20);
       setHeight((prev) => prev + 100);
       setAngle((prev) => prev + 20);
+      
     } else {
       /////window
     }
