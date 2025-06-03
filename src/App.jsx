@@ -121,16 +121,16 @@ function App() {
         />
         <img
           src={linepipe}
-          className="absolute w-30 h-200 -top-20  
+          className="absolute w-30 h-190 -top-20  
           left-150 "
         />
          <img
           src={linepipe}
-          className="absolute w-30 h-190 top-55    rotate-90 
+          className="absolute w-30 h-180 top-60     rotate-90 
           left-85 "
         />
         <img src={elbow} className="absolute w-30 h-30 top-10 left-4 z-20  " />
-        <img src={elbow} className="absolute w-26 h-26 top-131 opacity-90 left-147  rotate-180 z-20  " />
+        <img src={elbow} className="absolute w-26 h-26 top-131 opacity-95 left-147  rotate-180 z-20  " />
         <img
           src={packedpipe}
           className="absolute w-50 h-50 -top-9  left-155 "
