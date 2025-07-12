@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Apparatus Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="instruction-text">
+                <span class="instruction-label">Instruction :</span>
+                <span id="instruction-content">click on the motor button to switch the motor on</span>
+            </div>
+            <div class="controls">
+                <button class="btn" onclick="previous()">previous</button>
+                <button class="btn" onclick="next()">next</button>
+            </div>
+        </div>
+        
+        <div class="main-container">
+            <!-- Pipeline Elements -->
+            <div class="apparatus-image packed-pipe-1"></div>
+            <div class="apparatus-image packed-pipe-2"></div>
+            <div class="apparatus-image extend-pipe"></div>
+            <div class="apparatus-image line-pipe line-pipe-1"></div>
+            <div class="apparatus-image line-pipe line-pipe-2"></div>
+            <div class="apparatus-image line-pipe line-pipe-3"></div>
+            <div class="apparatus-image elbow elbow-1"></div>
+            <div class="apparatus-image elbow elbow-2"></div>
+            
+            <!-- Toggle Switch -->
+            <div class="toggle-switch" id="toggleSwitch" onclick="toggle()">
+                <div class="toggle-knob" id="toggleKnob"></div>
+            </div>
+            
+            <!-- Water Level -->
+            <div class="water-level" id="waterLevel"></div>
+            
+            <!-- Apparatus Container -->
+            <div class="apparatus-container">
+                <!-- Packed Bed Section -->
+                <div class="packed-section">
+                    <div class="packed-bed">
+                        <div class="handle outlet-handle" id="outletHandle" onclick="outValue()"></div>
+                        <div class="handle inlet-handle" id="inletHandle" onclick="inValue()"></div>
+                        <div class="packed-water">
+                            <div class="packed-water-fill" id="packedWaterFill"></div>
+                        </div>
+                    </div>
+                    <div class="label" style="top: 240px; margin-left: 196px;">Packed Bed</div>
+                    <div class="label" style="top: 520px; margin-left: 196px;">inlet value</div>
+                    <div class="label" style="top: 156px; margin-left: 32px;">outlet value</div>
+                </div>
+                
+                <!-- Manometer Section -->
+                <div class="manometer-section">
+                    <div class="manometer-container">
+                        <div class="manometer-tube manometer-left" id="manometerLeft"></div>
+                        <div class="manometer-tube manometer-right" id="manometerRight"></div>
+                    </div>
+                    <div class="manometer-body"></div>
+                    <div class="label" style="bottom: 160px; margin-left: 100px;">Manometer</div>
+                </div>
+                
+                <!-- Rotameter Section -->
+                <div class="rotameter-section">
+                    <div class="rotameter-container">
+                        <div class="rotameter-tube-container">
+                            <div class="rotameter-water" id="rotameterWater"></div>
+                            <div class="sphere" id="sphere"></div>
+                        </div>
+                        <div class="rotameter-tube"></div>
+                    </div>
+                    <div class="bypass-pipe"></div>
+                    <div class="bypass-handle" id="bypassHandle" onclick="bypass()"></div>
+                    <div class="label" style="bottom: 40px;">Rotameter</div>
+                    <div class="label" style="bottom: 40px; margin-left: 76px;">Bypass Valve</div>
+                </div>
+            </div>
+            
+            <!-- Tank and Pump -->
+            <div class="tank-container">
+                <div class="tank" id="tank"></div>
+                <div class="pump"></div>
+                <div class="tank-water">
+                    <div class="tank-water-fill" id="tankWaterFill"></div>
+                </div>
+                <div class="label" style="bottom: 60px; margin-left: 636px;">pump</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

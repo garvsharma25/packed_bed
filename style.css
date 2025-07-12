@@ -1,0 +1,455 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    height: 80px;
+    width: 100%;
+    background-color: #d97706;
+    padding-right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.instruction-text {
+    font-size: 24px;
+    display: flex;
+    white-space: pre-line;
+    padding: 12px;
+    color: #374151;
+}
+
+.instruction-label {
+    color: #1f2937;
+    white-space: nowrap;
+    margin-right: 8px;
+}
+
+.controls {
+    display: flex;
+}
+
+.btn {
+    background-color: #16a34a;
+    margin: 20px;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 24px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+.main-container {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 900px;
+    justify-content: center;
+    padding-top: 48px;
+    position: relative;
+    height: 900px;
+}
+
+.apparatus-image {
+    position: absolute;
+    z-index: 20;
+}
+
+.packed-pipe-1 {
+    width: 400px;
+    height: 120px;
+    top: 16px;
+    left: 144px;
+    background: linear-gradient(to right, #666, #999);
+    border-radius: 8px;
+}
+
+.packed-pipe-2 {
+    width: 400px;
+    height: 120px;
+    top: 16px;
+    left: 272px;
+    background: linear-gradient(to right, #666, #999);
+    border-radius: 8px;
+    z-index: 30;
+}
+
+.toggle-switch {
+    position: absolute;
+    left: 672px;
+    top: 210px;
+    z-index: 50;
+    width: 80px;
+    height: 40px;
+    background-color: #9ca3af;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch.active {
+    background-color: #10b981;
+    justify-content: flex-end;
+}
+
+.toggle-knob {
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.extend-pipe {
+    width: 240px;
+    height: 460px;
+    top: 56px;
+    left: 140px;
+    background: linear-gradient(to bottom, #666, #999);
+    border-radius: 8px;
+}
+
+.line-pipe {
+    background: linear-gradient(to bottom, #666, #999);
+    border-radius: 4px;
+}
+
+.line-pipe-1 {
+    width: 120px;
+    height: 680px;
+    top: 20px;
+    left: -8px;
+}
+
+.line-pipe-2 {
+    width: 120px;
+    height: 760px;
+    top: -80px;
+    left: 600px;
+}
+
+.line-pipe-3 {
+    width: 120px;
+    height: 720px;
+    top: 240px;
+    left: 340px;
+    transform: rotate(90deg);
+}
+
+.elbow {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #666, #999);
+    border-radius: 50%;
+}
+
+.elbow-1 {
+    top: 40px;
+    left: 16px;
+}
+
+.elbow-2 {
+    top: 524px;
+    left: 588px;
+    transform: rotate(180deg);
+    opacity: 0.95;
+}
+
+.water-level {
+    background-color: #7fadadff;
+    width: 40px;
+    position: absolute;
+    top: 580px;
+    left: 32px;
+    opacity: 0.8;
+    transition: height 1.5s ease;
+}
+
+.packed-section {
+    position: relative;
+    z-index: 50;
+    top: 16px;
+    width: 33.33%;
+    transform: scale(1.2);
+}
+
+.packed-bed {
+    height: 75%;
+    width: 200px;
+    background: linear-gradient(to bottom, #8b5cf6, #a78bfa);
+    border-radius: 12px;
+    position: relative;
+}
+
+.handle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #dc2626, #ef4444);
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border: 4px solid #991b1b;
+}
+
+.handle:hover {
+    transform: scale(1.1);
+}
+
+.outlet-handle {
+    top: 64px;
+    left: 20px;
+}
+
+.inlet-handle {
+    top: 460px;
+    left: 104px;
+}
+
+.packed-water {
+    width: 76px;
+    height: 296px;
+    left: 112px;
+    opacity: 0.3;
+    position: absolute;
+    top: 88px;
+    overflow: hidden;
+}
+
+.packed-water-fill {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #1d4ed8;
+    transition: height 1.5s ease;
+}
+
+.label {
+    position: absolute;
+    background-color: #fffbeb;
+    color: #dc2626;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.manometer-section {
+    position: relative;
+    width: 33.33%;
+    padding-left: 40px;
+}
+
+.manometer-container {
+    position: absolute;
+    display: flex;
+    top: 0;
+    height: 360px;
+    overflow: hidden;
+    z-index: 50;
+    width: 180px;
+    margin-left: 60px;
+}
+
+.manometer-tube {
+    width: 24px;
+    height: 152px;
+    position: relative;
+    top: 240px;
+    opacity: 0.85;
+    z-index: 50;
+    transition: transform 1.5s ease;
+}
+
+.manometer-left {
+    background-color: #246158ff;
+    left: 8px;
+}
+
+.manometer-right {
+    background-color: #246158ff;
+    left: 124px;
+}
+
+.manometer-body {
+    width: 200px;
+    height: 400px;
+    background: linear-gradient(to bottom, #e5e7eb, #d1d5db);
+    border: 4px solid #6b7280;
+    border-radius: 12px;
+    position: absolute;
+    top: 12px;
+}
+
+.rotameter-section {
+    width: 33.33%;
+    padding-left: 32px;
+    position: relative;
+}
+
+.rotameter-container {
+    height: 75%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.rotameter-tube-container {
+    position: absolute;
+    display: flex;
+    width: 60px;
+    z-index: 50;
+    height: 260px;
+    top: 92px;
+    overflow: hidden;
+}
+
+.rotameter-water {
+    background-color: #7fadadff;
+    width: 100%;
+    z-index: 20;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.8;
+    transition: height 1.5s ease;
+}
+
+.sphere {
+    width: 56px;
+    height: 56px;
+    background: radial-gradient(circle, #fbbf24, #f59e0b);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    transition: transform 1.5s ease;
+    border: 2px solid #d97706;
+}
+
+.rotameter-tube {
+    width: 80px;
+    height: 480px;
+    background: linear-gradient(to right, #e5e7eb, #f3f4f6);
+    border: 4px solid #6b7280;
+    border-radius: 40px;
+    position: absolute;
+}
+
+.bypass-pipe {
+    width: 160px;
+    height: 600px;
+    background: linear-gradient(to bottom, #666, #999);
+    border-radius: 8px;
+    position: relative;
+    top: -200px;
+    margin-left: 52px;
+    z-index: -10;
+}
+
+.bypass-handle {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #dc2626, #ef4444);
+    border-radius: 50%;
+    position: absolute;
+    top: 480px;
+    margin-left: 72px;
+    z-index: 50;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border: 4px solid #991b1b;
+}
+
+.bypass-handle:hover {
+    transform: scale(1.1);
+}
+
+.tank-container {
+    position: relative;
+}
+
+.tank {
+    width: 990px;
+    height: 150px;
+    background: linear-gradient(to bottom, #4b5563, #6b7280);
+    border-radius: 12px;
+    position: relative;
+    top: 130px;
+    margin-left: -40px;
+    z-index: -50;
+}
+
+.pump {
+    width: 160px;
+    height: 120px;
+    background: radial-gradient(circle, #059669, #10b981);
+    border-radius: 12px;
+    position: relative;
+    top: 196px;
+    margin-left: 640px;
+    z-index: -50;
+    transform: scaleX(-1);
+}
+
+.tank-water {
+    width: 760px;
+    height: 240px;
+    position: absolute;
+    margin-left: 32px;
+    top: 190px;
+    overflow: hidden;
+}
+
+.tank-water-fill {
+    width: 100%;
+    background-color: #d3e0dbff;
+    opacity: 0.9;
+    bottom: 0;
+    position: absolute;
+    transition: height 1.5s ease;
+}
+
+.apparatus-container {
+    display: flex;
+    height: 75%;
+    position: absolute;
+    width: 100%;
+}
+
+.vibrate {
+    animation: vibrate 0.3s infinite;
+}
+
+@keyframes vibrate {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-0.8px); }
+    50% { transform: translateX(0.8px); }
+    75% { transform: translateX(-0.8px); }
+}
