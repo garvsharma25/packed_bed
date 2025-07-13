@@ -112,10 +112,12 @@ function bypass() {
     if (tankk > 150 && count === 1) {
         tankk -= 50;
     }
-    
+    if (heightt<195){
+  heightt += 55;
+    }
     if (ball > -200 && count === 1) {
         ball -= 20;
-        heightt += 100;
+      
         angle += 20;
         updateDisplay();
     }

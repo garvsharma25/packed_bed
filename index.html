@@ -21,14 +21,15 @@
         
         <div class="main-container">
             <!-- Pipeline Elements -->
-            <div class="apparatus-image packed-pipe-1"></div>
-            <div class="apparatus-image packed-pipe-2"></div>
-            <div class="apparatus-image extend-pipe"></div>
-            <div class="apparatus-image line-pipe line-pipe-1"></div>
-            <div class="apparatus-image line-pipe line-pipe-2"></div>
-            <div class="apparatus-image line-pipe line-pipe-3"></div>
-            <div class="apparatus-image elbow elbow-1"></div>
-            <div class="apparatus-image elbow elbow-2"></div>
+            <img src="/assets/packedpipe.png" class="apparatus-image packed-pipe-1"></img>
+             <img src="/assets/packedpipe.png" class="apparatus-image packed-pipe-3"></img>
+            <img  src="/assets/packedpipe.png"  class="apparatus-image packed-pipe-2"></img>
+            <img  src="/assets/extendpipe.png"  class="apparatus-image extend-pipe"></img>
+            <img src="/assets/linepipe.png" class="apparatus-image line-pipe line-pipe-1"></img>
+            <img  src="/assets/linepipe.png"  class="apparatus-image line-pipe line-pipe-2"></img>
+            <img src="/assets/linepipe.png"  class="apparatus-image line-pipe line-pipe-3"></img>
+            <img src="/assets/elbow.png"  class="apparatus-image elbow elbow-1"></img>
+            <img src="/assets/elbow.png"  class="apparatus-image elbow  elbow-2"></img>
             
             <!-- Toggle Switch -->
             <div class="toggle-switch" id="toggleSwitch" onclick="toggle()">
@@ -40,11 +41,11 @@
             
             <!-- Apparatus Container -->
             <div class="apparatus-container">
-                <!-- Packed Bed Section -->
+                <!-- Packed Bed Section --> 
                 <div class="packed-section">
-                    <div class="packed-bed">
-                        <div class="handle outlet-handle" id="outletHandle" onclick="outValue()"></div>
-                        <div class="handle inlet-handle" id="inletHandle" onclick="inValue()"></div>
+                    <img src="assets/packed.png" class="packed-bed">
+                        <img src="assets/handle.png" class="handle outlet-handle" id="outletHandle" onclick="outValue()"></img>
+                        <img src="assets/handle.png" class="handle inlet-handle" id="inletHandle" onclick="inValue()"></img>
                         <div class="packed-water">
                             <div class="packed-water-fill" id="packedWaterFill"></div>
                         </div>
@@ -56,34 +57,34 @@
                 
                 <!-- Manometer Section -->
                 <div class="manometer-section">
-                    <div class="manometer-container">
+                    <img src="assets/manometer.png" class="manometer-container">
                         <div class="manometer-tube manometer-left" id="manometerLeft"></div>
                         <div class="manometer-tube manometer-right" id="manometerRight"></div>
-                    </div>
+                    </img>
                     <div class="manometer-body"></div>
-                    <div class="label" style="bottom: 160px; margin-left: 100px;">Manometer</div>
+                    <div class="label" style="bottom: 160px; margin-left: 50px;">Manometer</div>
                 </div>
                 
                 <!-- Rotameter Section -->
-                <div class="rotameter-section">
+                <div class="rotameter-section  ">
                     <div class="rotameter-container">
-                        <div class="rotameter-tube-container">
+                        <img src="assets/tube.png" class="rotameter-tube-container">
                             <div class="rotameter-water" id="rotameterWater"></div>
-                            <div class="sphere" id="sphere"></div>
-                        </div>
+                            <img src="assets/sphere.png" class="sphere" id="sphere"></img>
+                        </img>
                         <div class="rotameter-tube"></div>
                     </div>
-                    <div class="bypass-pipe"></div>
-                    <div class="bypass-handle" id="bypassHandle" onclick="bypass()"></div>
-                    <div class="label" style="bottom: 40px;">Rotameter</div>
-                    <div class="label" style="bottom: 40px; margin-left: 76px;">Bypass Valve</div>
+                    <img src="assets/linepipe.png" class="bypass-pipe"></img>
+                    <img src="assets/handle.png" class="bypass-handle" id="bypassHandle" onclick="bypass()"></img>
+                    <div class="label" style="top: -50px ; margin-left:  -110px ">Rotameter</div>
+                    <div class="label" style="top: 130PX; margin-left: -29px;">Bypass Valve</div>
                 </div>
             </div>
             
             <!-- Tank and Pump -->
             <div class="tank-container">
-                <div class="tank" id="tank"></div>
-                <div class="pump"></div>
+                <img src="assets/tank.png" class="tank" id="tank"></img>
+                <img src="assets/pump.png" class="pump"></img>
                 <div class="tank-water">
                     <div class="tank-water-fill" id="tankWaterFill"></div>
                 </div>
