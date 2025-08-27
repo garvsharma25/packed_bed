@@ -2,12 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body {
     font-family: system-ui, -apple-system, sans-serif;
-    background-color: #f0f0f0;
-    
+    background-color: #6e6a6a;
+    align-self:middle;
   
 }
 
